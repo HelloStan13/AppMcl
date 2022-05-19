@@ -1,7 +1,7 @@
 package com.sofka.app.recepcion.entities;
 
 import co.com.sofka.domain.generic.Entity;
-import com.sofka.app.recepcion.PedidoId;
+import com.sofka.app.recepcion.values.PedidoId;
 import com.sofka.app.recepcion.values.Estado;
 import com.sofka.app.recepcion.values.FechaRecibido;
 

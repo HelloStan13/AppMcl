@@ -6,6 +6,7 @@ import com.sofka.app.personal.values.PersonalId;
 import com.sofka.app.recepcion.entities.Inventario;
 import com.sofka.app.recepcion.entities.Pedido;
 import com.sofka.app.recepcion.entities.Proveedor;
+import com.sofka.app.recepcion.values.PedidoId;
 import com.sofka.app.recepcion.values.RecepcionId;
 
 import java.util.List;
