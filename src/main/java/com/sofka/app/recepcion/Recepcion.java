@@ -1,6 +1,7 @@
 package com.sofka.app.recepcion;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.sofka.app.almacenamiento.values.AlmacenamientoId;
 import com.sofka.app.personal.values.PersonalId;
 import com.sofka.app.recepcion.entities.Inventario;
@@ -31,6 +32,16 @@ public class Recepcion extends AggregateEvent<RecepcionId> {
         appendChange(new PedidoRecibido(recepcionId, almacenamientoId, pedidoId, estado)).apply();
         appendChange(new PedidoAlmacenado(almacenamientoId,recepcionId,pedidoId,estado)).apply();
         appendChange(new ContenidoVerificado(recepcionId, almacenamientoId, pedidoId, estado));
+    }
+
+    public Recepcion(RecepcionId recepcionId) {
+        super(recepcionId);
+    }
+
+    public static Recepcion from(RecepcionId recepcionId, List<DomainEvent>events){
+        var recepcion = new Recepcion(recepcionId);
+        events.forEach(recepcion::applyEvent);
+        return recepcion;
     }
 
     //Comportamientos

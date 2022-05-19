@@ -18,6 +18,5 @@ public class RecepcionChange extends EventChange {
         apply((PedidoRecibido event) ->{
             recepcion.recibirPedido(event.getRecepcionId(),event.getPedidoId(),event.getEstado());
         });
-
     }
 }
