@@ -4,7 +4,6 @@ import co.com.sofka.domain.generic.Command;
 import com.sofka.app.personal.values.DatosPersonales;
 import com.sofka.app.personal.values.PersonalId;
 
-
 import java.util.Objects;
 
 public class EditarPersonal extends Command {

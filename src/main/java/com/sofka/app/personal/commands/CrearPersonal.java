@@ -6,8 +6,8 @@ import com.sofka.app.personal.values.PersonalId;
 
 
 public class CrearPersonal extends Command {
-   private PersonalId personalId;
-   private DatosPersonales datosPersonales;
+    private PersonalId personalId;
+    private DatosPersonales datosPersonales;
 
     public CrearPersonal(PersonalId personalId, DatosPersonales datosPersonales) {
         this.personalId = personalId;

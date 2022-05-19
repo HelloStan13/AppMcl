@@ -13,8 +13,9 @@ public class JefeBodega extends Entity<JefeBodegaId> {
         super(jefeBodegaId);
         this.datosPersonales = datosPersonales;
     }
+
     //comportamientos
-    public void actualizarDatos(DatosPersonales datosPersonales){
+    public void actualizarDatos(DatosPersonales datosPersonales) {
         this.datosPersonales = Objects.requireNonNull(datosPersonales);
     }
 

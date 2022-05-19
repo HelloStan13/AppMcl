@@ -3,7 +3,6 @@ package com.sofka.app.personal.entities;
 import co.com.sofka.domain.generic.Entity;
 import com.sofka.app.personal.values.AuxiliarBodegaId;
 import com.sofka.app.personal.values.DatosPersonales;
-
 import java.util.Objects;
 
 public class AuxiliarBodega extends Entity<AuxiliarBodegaId> {
@@ -15,7 +14,7 @@ public class AuxiliarBodega extends Entity<AuxiliarBodegaId> {
     }
     //comportamientos
 
-    public void actualizarDatos(DatosPersonales datosPersonales){
+    public void actualizarDatos(DatosPersonales datosPersonales) {
         this.datosPersonales = Objects.requireNonNull(datosPersonales);
     }
 

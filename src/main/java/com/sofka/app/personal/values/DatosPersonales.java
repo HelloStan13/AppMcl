@@ -17,23 +17,24 @@ public class DatosPersonales implements ValueObject<String> {
         this.apellido = apellido;
         this.correo = correo;
 
-        if(this.nombre.length() <= 4){
+        if (this.nombre.length() <= 4) {
             throw new IllegalArgumentException("El nombre debe tener más de 4 caracteres");
         }
-        if(this.apellido.length() <= 4){
+        if (this.apellido.length() <= 4) {
             throw new IllegalArgumentException("El apellido debe tener más de 4 caracteres");
         }
-        if(this.apellido.isBlank()){
+        if (this.apellido.isBlank()) {
             throw new IllegalArgumentException("El nombre no puede ser vacío");
         }
-        if(this.apellido.isBlank()){
+        if (this.apellido.isBlank()) {
             throw new IllegalArgumentException("El apellido no puede ser vacío");
         }
-        if(this.correo.isBlank()){
+        if (this.correo.isBlank()) {
             throw new IllegalArgumentException("El apellido no puede ser vacío");
         }
 
     }
+
     @Override
     public String value() {
         return nombre + apellido + correo;
@@ -44,7 +45,7 @@ public class DatosPersonales implements ValueObject<String> {
         if (this == o) return true;
         if (!(o instanceof DatosPersonales)) return false;
         DatosPersonales that = (DatosPersonales) o;
-        return nombre.equals(that.nombre) && apellido.equals(that.apellido) && correo.equals(that.correo) ;
+        return nombre.equals(that.nombre) && apellido.equals(that.apellido) && correo.equals(that.correo);
     }
 
     @Override

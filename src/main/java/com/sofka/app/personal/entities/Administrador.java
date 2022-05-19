@@ -16,9 +16,10 @@ public class Administrador extends Entity<AdministradorId> {
 
     //comportamientos
 
-    public void actualizarDatos(DatosPersonales datosPersonales){
+    public void actualizarDatos(DatosPersonales datosPersonales) {
         this.datospersonales = Objects.requireNonNull(datosPersonales);
     }
+
     //Propiedades
     public DatosPersonales datospersonales() {
         return datospersonales;

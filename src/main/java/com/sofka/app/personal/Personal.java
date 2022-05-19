@@ -6,7 +6,8 @@ import com.sofka.app.personal.entities.AuxiliarBodega;
 import com.sofka.app.personal.entities.JefeBodega;
 import com.sofka.app.personal.events.PersonalCreado;
 import com.sofka.app.personal.events.PersonalEditado;
-import com.sofka.app.personal.values.*;
+import com.sofka.app.personal.values.DatosPersonales;
+import com.sofka.app.personal.values.PersonalId;
 
 import java.util.Objects;
 
@@ -36,7 +37,7 @@ public class Personal extends AggregateEvent<PersonalId> {
         appendChange(new PersonalCreado(personalId, datosPersonales)).apply();
     }
 
-    public void editarPersonal(PersonalId personalId, DatosPersonales datosPersonales){
+    public void editarPersonal(PersonalId personalId, DatosPersonales datosPersonales) {
         appendChange(new PersonalEditado(personalId, datosPersonales)).apply();
     }
 
