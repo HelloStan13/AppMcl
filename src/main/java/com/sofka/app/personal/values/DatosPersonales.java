@@ -33,11 +33,10 @@ public class DatosPersonales implements ValueObject<String> {
             throw new IllegalArgumentException("El apellido no puede ser vacío");
         }
 
-
     }
     @Override
     public String value() {
-        return nombre+apellido+correo;
+        return nombre + apellido + correo;
     }
 
     @Override

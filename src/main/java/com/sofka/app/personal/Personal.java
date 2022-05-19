@@ -19,21 +19,21 @@ public class Personal extends AggregateEvent<PersonalId> {
 
     public Personal(PersonalId personalId, DatosPersonales datosPersonales) {
         super(personalId);
-        appendChange(new PersonalCreado(datosPersonales, personalId)).apply();
+        appendChange(new PersonalCreado(personalId, datosPersonales)).apply();
         appendChange(new PersonalEditado(personalId, datosPersonales)).apply();
     }
 
-    //Constructor privado para afectar los estados
+
     public Personal(PersonalId personalId) {
         super(personalId);
-        //subscribe(new PersonalChange(this));pendiente por hacer
+        subscribe(new PersonalChange(this));
     }
 
     //Comportamientos
     public void agregarPersonal(PersonalId personalId, DatosPersonales datosPersonales) {
         Objects.requireNonNull(personalId);
         Objects.requireNonNull(datosPersonales);
-        appendChange(new PersonalCreado(datosPersonales, personalId)).apply();
+        appendChange(new PersonalCreado(personalId, datosPersonales)).apply();
     }
 
     public void editarPersonal(PersonalId personalId, DatosPersonales datosPersonales){
