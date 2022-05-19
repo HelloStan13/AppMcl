@@ -1,6 +1,7 @@
 package com.sofka.app.personal;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.sofka.app.personal.entities.Administrador;
 import com.sofka.app.personal.entities.AuxiliarBodega;
 import com.sofka.app.personal.entities.JefeBodega;
@@ -8,7 +9,10 @@ import com.sofka.app.personal.events.PersonalCreado;
 import com.sofka.app.personal.events.PersonalEditado;
 import com.sofka.app.personal.values.DatosPersonales;
 import com.sofka.app.personal.values.PersonalId;
+import com.sofka.app.recepcion.Recepcion;
+import com.sofka.app.recepcion.values.RecepcionId;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Personal extends AggregateEvent<PersonalId> {
@@ -28,6 +32,12 @@ public class Personal extends AggregateEvent<PersonalId> {
     public Personal(PersonalId personalId) {
         super(personalId);
         subscribe(new PersonalChange(this));
+    }
+
+    public static Personal from(PersonalId personalId, List<DomainEvent> events){
+        var personal = new Personal(personalId);
+        events.forEach(personal::applyEvent);
+        return personal;
     }
 
     //Comportamientos
