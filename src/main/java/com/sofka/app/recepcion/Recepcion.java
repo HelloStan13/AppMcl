@@ -19,7 +19,8 @@ public class Recepcion extends AggregateEvent<RecepcionId> {
     private Pedido pedido;
     private PedidoId pedidoId;
 
-    public Recepcion(RecepcionId recepcionId) {
+    public Recepcion(RecepcionId recepcionId, AlmacenamientoId almacenamientoId, PedidoId pedidoId) {
+
         super(recepcionId);
     }
 }
