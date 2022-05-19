@@ -20,7 +20,6 @@ public class Recepcion extends AggregateEvent<RecepcionId> {
     private PedidoId pedidoId;
 
     public Recepcion(RecepcionId recepcionId, AlmacenamientoId almacenamientoId, PedidoId pedidoId) {
-
         super(recepcionId);
     }
 }
