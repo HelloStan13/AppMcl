@@ -7,7 +7,8 @@ import com.sofka.app.personal.values.DatosPersonales;
 public class Administrador extends Entity<AdministradorId> {
     private DatosPersonales datospersonales;
 
-    public Administrador(AdministradorId entityId) {
-        super(entityId);
+    public Administrador(AdministradorId administradorId, DatosPersonales datospersonales) {
+        super(administradorId);
+        this.datospersonales = datospersonales;
     }
 }
