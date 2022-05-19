@@ -16,6 +16,7 @@ import com.sofka.app.recepcion.values.RecepcionId;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public class Recepcion extends AggregateEvent<RecepcionId> {
     protected RecepcionId recepcionId;
@@ -56,4 +57,6 @@ public class Recepcion extends AggregateEvent<RecepcionId> {
         Objects.requireNonNull(almacenamientoId);
         appendChange(new PedidoAlmacenado(almacenamientoId, recepcionId, pedidoId,estado)).apply();
     }
+
+
 }

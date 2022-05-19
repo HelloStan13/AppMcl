@@ -7,15 +7,16 @@ import com.sofka.app.personal.entities.AuxiliarBodega;
 import com.sofka.app.personal.entities.JefeBodega;
 import com.sofka.app.personal.events.PersonalCreado;
 import com.sofka.app.personal.events.PersonalEditado;
+import com.sofka.app.personal.events.PersonalEliminado;
 import com.sofka.app.personal.values.DatosPersonales;
 import com.sofka.app.personal.values.PersonalId;
-import com.sofka.app.recepcion.Recepcion;
-import com.sofka.app.recepcion.values.RecepcionId;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Personal extends AggregateEvent<PersonalId> {
+    public ArrayList<Object> eliminarPersonal;
     protected Administrador administrador;
     protected JefeBodega jefeBodega;
     protected AuxiliarBodega auxiliarBodega;
@@ -50,5 +51,9 @@ public class Personal extends AggregateEvent<PersonalId> {
     public void editarPersonal(PersonalId personalId, DatosPersonales datosPersonales) {
         appendChange(new PersonalEditado(personalId, datosPersonales)).apply();
     }
+    public void eliminarPersonal(PersonalId personalId) {
+        appendChange(new PersonalEliminado(personalId)).apply();
+    }
+
 
 }

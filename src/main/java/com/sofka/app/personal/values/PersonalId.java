@@ -14,4 +14,5 @@ public class PersonalId extends Identity {
     public static PersonalId of(String valor) {
         return new PersonalId(valor);
     }
+
 }
