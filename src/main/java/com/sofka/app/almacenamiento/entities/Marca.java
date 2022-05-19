@@ -17,7 +17,15 @@ public class Marca extends Entity<MarcaId> {
     }
 
     //comportamientos
-
+    public void clasificarPormarca(MarcaId marcaId, DatosDemarca datosDemarca, Estante estante ){
+        this.marcaId = marcaId;
+        this.datosDemarca = datosDemarca;
+        this.estante = estante;
+    }
+    public void crearNuevosEstantes(DatosDemarca datosDemarca, Estante estante){
+        this.datosDemarca = datosDemarca;
+        this.estante = estante;
+    }
 
     //Propiedades
 

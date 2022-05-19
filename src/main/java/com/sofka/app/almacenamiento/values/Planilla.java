@@ -1,4 +1,4 @@
-package com.sofka.app.almacenamiento.entities;
+package com.sofka.app.almacenamiento.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 

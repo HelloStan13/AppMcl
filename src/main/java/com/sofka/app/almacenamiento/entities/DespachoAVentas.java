@@ -2,6 +2,9 @@ package com.sofka.app.almacenamiento.entities;
 
 import co.com.sofka.domain.generic.Entity;
 import com.sofka.app.almacenamiento.values.DespachoAVentasId;
+import com.sofka.app.almacenamiento.values.Planilla;
+
+import java.util.Objects;
 
 
 public class DespachoAVentas extends Entity<DespachoAVentasId> {
@@ -13,7 +16,10 @@ public class DespachoAVentas extends Entity<DespachoAVentasId> {
 
     }
 
-    //Comportamientos
+    //Comportamiento
+    public void despacharProductos(Planilla planilla){
+        this.planilla = Objects.requireNonNull(planilla);
+    }
 
 
     //Propiedades
