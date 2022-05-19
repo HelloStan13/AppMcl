@@ -21,15 +21,15 @@ public class AlmacenarPormarca  extends Command {
         this.estante = estante;
     }
 
-    public AlmacenamientoId getAlmacenamientoId() {
+    public AlmacenamientoId almacenamientoId() {
         return almacenamientoId;
     }
 
-    public DatosDemarca getDatosDemarca() {
+    public DatosDemarca datosDemarca() {
         return datosDemarca;
     }
 
-    public Estante getEstante() {
+    public Estante estante() {
         return estante;
     }
 }

@@ -7,12 +7,12 @@ import com.sofka.app.almacenamiento.values.Planilla;
 
 import java.util.Objects;
 
-public class ProductoaDespachar extends Command {
+public class DespacharProductos extends Command {
     private AlmacenamientoId almacenamientoId;
     private DespachoAVentasId despachoAVentaId;
     private Planilla planilla;
 
-    public ProductoaDespachar(AlmacenamientoId almacenamientoId, DespachoAVentasId despachoAVentaId, Planilla planilla) {
+    public DespacharProductos(AlmacenamientoId almacenamientoId, DespachoAVentasId despachoAVentaId, Planilla planilla) {
         Objects.requireNonNull(almacenamientoId);
         Objects.requireNonNull(despachoAVentaId);
         Objects.requireNonNull(planilla);

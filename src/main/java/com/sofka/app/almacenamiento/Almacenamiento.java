@@ -25,6 +25,9 @@ public class Almacenamiento  extends AggregateEvent<AlmacenamientoId> {
         appendChange(new ProductosDespachados(almacenamientoId, despachoAVentaId, planilla)).apply();
     }
 
+    public Almacenamiento(AlmacenamientoId almacenamientoId, DatosDemarca datosDemarca, Estante estante) {
+        super(almacenamientoId);
+    }
 
     //comportamientos
     public void almacenarPormarca(AlmacenamientoId almacenamientoId, DatosDemarca datosDemarca, Estante estante){
