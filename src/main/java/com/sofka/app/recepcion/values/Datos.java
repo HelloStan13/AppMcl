@@ -1,4 +1,4 @@
-package com.sofka.app.recepcion.entities;
+package com.sofka.app.recepcion.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 

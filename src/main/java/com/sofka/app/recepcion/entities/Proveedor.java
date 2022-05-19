@@ -1,6 +1,8 @@
 package com.sofka.app.recepcion.entities;
 
 import co.com.sofka.domain.generic.Entity;
+import com.sofka.app.recepcion.values.Datos;
+import com.sofka.app.recepcion.values.Direccion;
 import com.sofka.app.recepcion.values.ProveedorId;
 
 public class Proveedor extends Entity<ProveedorId> {
@@ -14,12 +16,28 @@ public class Proveedor extends Entity<ProveedorId> {
         this.direccion = direccion;
     }
 
+//Comportamientos
+
+    public void agregarProovedor(Datos datos, Direccion direccion){
+        this.datos = datos;
+        this.direccion = direccion;
+    }
+
+    public void editarProovedor(ProveedorId proveedorId){
+        this.proovedorId = proveedorId;
+    }
+
+    public void eliminarProovedor(ProveedorId proveedorId){
+        if(proovedorId != null){
+            this.proovedorId = proovedorId;
+        }
+    }
 
     //Propiedades
 
 
     public ProveedorId proveedorId() {
-        return proovedorId;
+        return proveedorId();
     }
 
     public Datos datos() {

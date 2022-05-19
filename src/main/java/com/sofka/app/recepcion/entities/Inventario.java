@@ -16,7 +16,12 @@ public class Inventario extends Entity<InventarioId> {
     }
     //Comportamientos
 
-
+    public void realizarInventario(Planillas planillas){
+        this.planillas = planillas;
+    }
+    public void registrarNovedades(Novedades novedades){
+        this.novedades = novedades;
+    }
 
     //Propiedades
 
