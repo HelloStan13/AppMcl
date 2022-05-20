@@ -53,4 +53,6 @@ public class DatosPersonales implements ValueObject<String> {
         return Objects.hash(nombre, apellido, correo);
     }
 
+    public void add(DatosPersonales datosPersonales) {
+    }
 }

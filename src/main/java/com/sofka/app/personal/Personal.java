@@ -5,6 +5,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 import com.sofka.app.personal.entities.Administrador;
 import com.sofka.app.personal.entities.AuxiliarBodega;
 import com.sofka.app.personal.entities.JefeBodega;
+import com.sofka.app.personal.events.PersonalAsignado;
 import com.sofka.app.personal.events.PersonalCreado;
 import com.sofka.app.personal.events.PersonalEditado;
 import com.sofka.app.personal.events.PersonalEliminado;
@@ -51,6 +52,13 @@ public class Personal extends AggregateEvent<PersonalId> {
     public void editarPersonal(DatosPersonales datosPersonales, PersonalId personalId) {
         appendChange(new PersonalEditado(datosPersonales, personalId)).apply();
     }
+
+    public void asignarPersonal(PersonalId personalId){
+        Objects.requireNonNull(personalId);
+        appendChange(new PersonalAsignado(personalId)).apply();
+    }
+
+
     public void eliminarPersonal(PersonalId personalId) {
         appendChange(new PersonalEliminado(personalId)).apply();
     }
