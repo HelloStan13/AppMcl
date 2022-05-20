@@ -9,6 +9,7 @@ import com.sofka.app.recepcion.entities.Pedido;
 import com.sofka.app.recepcion.entities.Proveedor;
 import com.sofka.app.recepcion.events.ContenidoVerificado;
 import com.sofka.app.recepcion.events.PedidoAlmacenado;
+import com.sofka.app.recepcion.events.PedidoFinalizado;
 import com.sofka.app.recepcion.events.PedidoRecibido;
 import com.sofka.app.recepcion.values.Estado;
 import com.sofka.app.recepcion.values.PedidoId;
@@ -16,7 +17,6 @@ import com.sofka.app.recepcion.values.RecepcionId;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 public class Recepcion extends AggregateEvent<RecepcionId> {
     protected RecepcionId recepcionId;
@@ -57,6 +57,11 @@ public class Recepcion extends AggregateEvent<RecepcionId> {
         Objects.requireNonNull(almacenamientoId);
         appendChange(new PedidoAlmacenado(almacenamientoId, recepcionId, pedidoId,estado)).apply();
     }
+    public void finalizarPedidoo(Pedido pedido){
+        appendChange(new PedidoFinalizado(pedido, estado)).apply();
+    }
+
+
 
 
 }
