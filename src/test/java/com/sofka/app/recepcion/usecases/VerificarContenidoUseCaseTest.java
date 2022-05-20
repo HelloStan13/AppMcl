@@ -23,7 +23,6 @@ class VerificarContenidoUseCaseTest {
 
         var command = new VerificarContenido(almacenamientoId, recepcionId,pedidoId,estado);
         var usecase = new VerificarContenidoUseCase();
-
         //act
         var events= UseCaseHandler.getInstance()
                 .syncExecutor(usecase, new RequestCommand<>(command))

@@ -9,8 +9,6 @@ public class PersonalCreado extends DomainEvent {
     private DatosPersonales datosPersonales;
     private PersonalId personalId;
 
-
-
     public PersonalCreado(DatosPersonales datosPersonales, PersonalId personalId) {
         super("com.sofka.app.personalCreado");
     }
@@ -20,6 +18,4 @@ public class PersonalCreado extends DomainEvent {
     public PersonalId getPersonalId() {
         return personalId;
     }
-
-
 }

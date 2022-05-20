@@ -27,7 +27,6 @@ public class Almacenamiento  extends AggregateEvent<AlmacenamientoId> {
         super(almacenamientoId);
         appendChange(new ProductosDespachados(almacenamientoId, despachoAVentaId, planilla)).apply();
     }
-
     public Almacenamiento(AlmacenamientoId almacenamientoId, DatosDemarca datosDemarca, Estante estante) {
         super(almacenamientoId);
     }
@@ -41,7 +40,6 @@ public class Almacenamiento  extends AggregateEvent<AlmacenamientoId> {
         events.forEach(almacenamiento::applyEvent);
         return almacenamiento;
     }
-
     //comportamientos
     public void almacenarPormarca(AlmacenamientoId almacenamientoId, DatosDemarca datosDemarca, Estante estante){
         appendChange(new AlmacenadoPormarca(almacenamientoId, datosDemarca, estante)).apply();
@@ -52,5 +50,4 @@ public class Almacenamiento  extends AggregateEvent<AlmacenamientoId> {
     public void productoaDespachar(AlmacenamientoId almacenamientoId, DespachoAVentasId despachoAVentaId, Planilla planilla ){
         appendChange(new ProductosDespachados(almacenamientoId, despachoAVentaId, planilla)).apply();
     }
-
 }

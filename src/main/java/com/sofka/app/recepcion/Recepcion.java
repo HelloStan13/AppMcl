@@ -60,8 +60,4 @@ public class Recepcion extends AggregateEvent<RecepcionId> {
     public void finalizarPedido(Pedido pedido){
         appendChange(new PedidoFinalizado(pedido, estado)).apply();
     }
-
-
-
-
 }

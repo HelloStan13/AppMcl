@@ -13,13 +13,10 @@ public class Administrador extends Entity<AdministradorId> {
         super(administradorId);
         this.datospersonales = datospersonales;
     }
-
     //comportamientos
-
     public void actualizarDatos(DatosPersonales datosPersonales) {
         this.datospersonales = Objects.requireNonNull(datosPersonales);
     }
-
     //Propiedades
     public DatosPersonales datospersonales() {
         return datospersonales;

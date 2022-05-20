@@ -8,9 +8,9 @@ import com.sofka.app.almacenamiento.values.Planilla;
 import java.util.Objects;
 
 public class DespacharProductos extends Command {
-    private AlmacenamientoId almacenamientoId;
-    private DespachoAVentasId despachoAVentaId;
-    private Planilla planilla;
+    private final AlmacenamientoId almacenamientoId;
+    private final DespachoAVentasId despachoAVentaId;
+    private final Planilla planilla;
 
     public DespacharProductos(AlmacenamientoId almacenamientoId, DespachoAVentasId despachoAVentaId, Planilla planilla) {
         Objects.requireNonNull(almacenamientoId);

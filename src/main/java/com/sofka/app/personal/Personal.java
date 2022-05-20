@@ -30,7 +30,6 @@ public class Personal extends AggregateEvent<PersonalId> {
         appendChange(new PersonalEditado(datosPersonales, personalId )).apply();
     }
 
-
     public Personal(PersonalId personalId) {
         super(personalId);
         subscribe(new PersonalChange(this));
@@ -62,6 +61,4 @@ public class Personal extends AggregateEvent<PersonalId> {
         Objects.requireNonNull(personalId);
         appendChange(new PersonalEliminado(personalId)).apply();
     }
-
-
 }

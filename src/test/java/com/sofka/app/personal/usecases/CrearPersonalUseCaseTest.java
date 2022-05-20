@@ -28,5 +28,4 @@ class CrearPersonalUseCaseTest {
         Assertions.assertEquals("com.sofka.app.personalCreado", event.type);
         Assertions.assertEquals(personalId.value(),event.aggregateRootId());
     }
-
 }

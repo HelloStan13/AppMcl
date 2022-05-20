@@ -22,11 +22,9 @@ public class Proveedor extends Entity<ProveedorId> {
         this.datos = datos;
         this.direccion = direccion;
     }
-
     public void editarProovedor(ProveedorId proveedorId){
         this.proovedorId = proveedorId;
     }
-
     public void eliminarProovedor(ProveedorId proveedorId){
         if(proovedorId != null){
             this.proovedorId = proovedorId;

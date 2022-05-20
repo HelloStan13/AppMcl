@@ -33,5 +33,4 @@ class DespacharProductosUseCaseTest {
         var event = (ProductosDespachados)events.get(0);
         Assertions.assertEquals("com.sofka.app.productosDespachados", event.type);
     }
-
 }
