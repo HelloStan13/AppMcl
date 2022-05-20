@@ -15,7 +15,7 @@ public class ContenidoVerificado extends DomainEvent {
 
 
     public ContenidoVerificado(RecepcionId recepcionId, AlmacenamientoId almacenamientoId, PedidoId pedidoId, Estado estado) {
-        super("com.sofka.app.contenidoverificado");
+        super("com.sofka.app.contenidoVerificado");
         this.recepcionId = recepcionId;
         this.almacenamientoId = almacenamientoId;
         this.pedidoId = pedidoId;

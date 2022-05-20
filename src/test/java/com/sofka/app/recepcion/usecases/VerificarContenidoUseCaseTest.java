@@ -3,8 +3,8 @@ package com.sofka.app.recepcion.usecases;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
 import com.sofka.app.almacenamiento.values.AlmacenamientoId;
-import com.sofka.app.recepcion.commands.AlmacenarPedido;
-import com.sofka.app.recepcion.events.PedidoAlmacenado;
+import com.sofka.app.recepcion.commands.VerificarContenido;
+import com.sofka.app.recepcion.events.ContenidoVerificado;
 import com.sofka.app.recepcion.values.Estado;
 import com.sofka.app.recepcion.values.PedidoId;
 import com.sofka.app.recepcion.values.RecepcionId;
@@ -12,17 +12,17 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
-class AlmacenarPedidoUseCaseTest {
+class VerificarContenidoUseCaseTest {
     @Test
-    void almacenarPedido(){
+    void verificarContenido(){
         //arrange
         AlmacenamientoId almacenamientoId = new AlmacenamientoId();
         RecepcionId recepcionId = new RecepcionId();
         PedidoId pedidoId = new PedidoId();
-        Estado estado = new Estado(Estado.Fase.PEDIDO_ALMACENADO);
+        Estado estado = new Estado(Estado.Fase.CHEQUEODE_PEDIDO);
 
-        var command = new AlmacenarPedido(almacenamientoId, pedidoId, recepcionId, estado);
-        var usecase = new AlmacenarPedidoUseCase();
+        var command = new VerificarContenido(almacenamientoId, recepcionId,pedidoId,estado);
+        var usecase = new VerificarContenidoUseCase();
 
         //act
         var events= UseCaseHandler.getInstance()
@@ -31,9 +31,8 @@ class AlmacenarPedidoUseCaseTest {
                 .getDomainEvents();
 
         //assert
-
-        var event = (PedidoAlmacenado)events.get(1);
-        Assertions.assertEquals("sofka.farmacia.pedidoalmacenado", event.type);
+        var event = (ContenidoVerificado)events.get(2);
+        Assertions.assertEquals("com.sofka.app.contenidoVerificado", event.type);
         Assertions.assertEquals(recepcionId.value(), event.aggregateRootId());
         Assertions.assertNotNull(pedidoId);
     }
