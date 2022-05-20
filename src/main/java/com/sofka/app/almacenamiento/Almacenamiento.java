@@ -8,6 +8,7 @@ import com.sofka.app.almacenamiento.entities.Marca;
 import com.sofka.app.almacenamiento.events.AlmacenadoPormarca;
 import com.sofka.app.almacenamiento.events.ClasificadoPormarca;
 import com.sofka.app.almacenamiento.events.ProductosDespachados;
+import com.sofka.app.almacenamiento.events.ProductosDespachadosporMayor;
 import com.sofka.app.almacenamiento.values.*;
 import com.sofka.app.personal.Personal;
 import com.sofka.app.personal.values.PersonalId;
@@ -49,5 +50,8 @@ public class Almacenamiento  extends AggregateEvent<AlmacenamientoId> {
     }
     public void productoaDespachar(AlmacenamientoId almacenamientoId, DespachoAVentasId despachoAVentaId, Planilla planilla ){
         appendChange(new ProductosDespachados(almacenamientoId, despachoAVentaId, planilla)).apply();
+    }
+    public void productoaDespacharporMayor(AlmacenamientoId almacenamientoId, DespachoAVentasId despachoAVentaId, Planilla planilla ){
+        appendChange(new ProductosDespachadosporMayor(almacenamientoId, despachoAVentaId, planilla)).apply();
     }
 }

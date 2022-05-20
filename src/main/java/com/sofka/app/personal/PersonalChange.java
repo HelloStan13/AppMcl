@@ -1,6 +1,7 @@
 package com.sofka.app.personal;
 
 import co.com.sofka.domain.generic.EventChange;
+import com.sofka.app.personal.events.PersonalAsignado;
 import com.sofka.app.personal.events.PersonalCreado;
 import com.sofka.app.personal.events.PersonalEditado;
 import com.sofka.app.personal.events.PersonalEliminado;
@@ -17,6 +18,9 @@ public class PersonalChange extends EventChange {
         });
         apply((PersonalEditado event) -> {
             personal.editarPersonal( event.getDatosPersonales(), event.getPersonalId());
+        });
+        apply((PersonalAsignado event) -> {
+            personal.asignarPersonal(event.getDatosPersonales(), event.getPersonalId());
         });
         apply((PersonalEliminado event)->{
            personal.eliminarPersonal.removeIf((Predicate<? super Object>) event.getPersonalId());

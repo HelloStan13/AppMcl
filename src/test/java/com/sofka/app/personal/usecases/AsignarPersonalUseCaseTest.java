@@ -4,6 +4,7 @@ import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
 import com.sofka.app.personal.events.PersonalAsignado;
 import com.sofka.app.personal.commands.AsignarPersonal;
+import com.sofka.app.personal.values.DatosPersonales;
 import com.sofka.app.personal.values.PersonalId;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -14,7 +15,8 @@ class AsignarPersonalUseCaseTest {
     void AsignarPersonal(){
         //arrange:
         PersonalId personalId = new PersonalId();
-        var command = new AsignarPersonal(personalId);
+        DatosPersonales datosPersonales= new DatosPersonales("Adryan" ,"Ynfante", "a@gmail.com");
+        var command = new AsignarPersonal(personalId, datosPersonales);
         var usecase = new AsignarPersonalUseCase();
         //act
         var events = UseCaseHandler.getInstance()

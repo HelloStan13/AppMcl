@@ -5,13 +5,13 @@ import com.sofka.app.almacenamiento.values.AlmacenamientoId;
 import com.sofka.app.almacenamiento.values.DespachoAVentasId;
 import com.sofka.app.almacenamiento.values.Planilla;
 
-public class ProductosDespachados extends DomainEvent {
+public class ProductosDespachadosporMayor extends DomainEvent {
     private AlmacenamientoId almacenamientoId;
     private DespachoAVentasId despachoAVentaId;
     private Planilla planilla;
 
-    public ProductosDespachados( AlmacenamientoId almacenamientoId, DespachoAVentasId despachoAVentaId,Planilla planilla ) {
-        super("com.sofka.app.productosDespachadospor");
+    public ProductosDespachadosporMayor( AlmacenamientoId almacenamientoId, DespachoAVentasId despachoAVentaId,Planilla planilla ) {
+        super("com.sofka.app.productosDespachadosporMayor");
         this.almacenamientoId = almacenamientoId;
         this.despachoAVentaId = despachoAVentaId;
         this.planilla = planilla;
