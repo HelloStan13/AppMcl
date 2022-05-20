@@ -11,15 +11,15 @@ import com.sofka.app.almacenamiento.values.MarcaId;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
+@SuppressWarnings("TestFailedLine")
 class AlmacenarporMarcaUseCaseTest {
     @Test
     void almacenarPorMarca(){
         AlmacenamientoId almacenamientoId = new AlmacenamientoId();
         MarcaId marcaId = new MarcaId();
-        DatosDemarca datosDemarca = new DatosDemarca("Golty");
-        Estante estante = new Estante(1);
+        DatosDemarca datosDemarca = new DatosDemarca("1");
+        Estante estante = new Estante(0);
 
         var command = new AlmacenarPormarca(almacenamientoId, datosDemarca, estante);
         var because= new AlmacenarporMarcaUseCase();
@@ -31,9 +31,9 @@ class AlmacenarporMarcaUseCaseTest {
                 .getDomainEvents();
 
         //assert
-        var event = (AlmacenadoPormarca)events.get(1);
+        var event = (AlmacenadoPormarca)events.get(5);
         Assertions.assertEquals("com.sofka.app.almacenadoPormarca", event.type);
-        Assertions.assertEquals(almacenamientoId.value(), event.aggregateRootId());
+        Assertions.assertEquals(almacenamientoId.value(),event.aggregateRootId());
 
 
 
