@@ -17,6 +17,7 @@ git clone https://github.com/HelloStan13/AppMcl.git
 ![AppMcl-Modelamiento de Dominio](https://user-images.githubusercontent.com/92740455/169561971-aabf8970-6b3a-499e-a49d-17bb54ae21a3.jpg)
 
 ## Documentación 
+Explicación de proyecto
 [Sofka DDD Reto AppMCl by AdryanYnfante.pdf](https://github.com/HelloStan13/AppMcl/files/8742254/Sofka.DDD.Reto.AppMCl.by.AdryanYnfante.pdf)
 
 
