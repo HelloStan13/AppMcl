@@ -12,7 +12,7 @@ public class CrearPersonalUseCase extends UseCase<RequestCommand<CrearPersonal>,
     @Override
     public void executeUseCase(RequestCommand<CrearPersonal> input) {
         var command = input.getCommand();
-        var personal = new Personal(command.getPersonalId(), command.getDatosPersonales());
+        var personal = new Personal( command.getDatosPersonales(), command.getPersonalId());
         emit().onResponse(new ResponseEvents(personal.getUncommittedChanges()));
     }
 }

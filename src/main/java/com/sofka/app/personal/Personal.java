@@ -23,10 +23,10 @@ public class Personal extends AggregateEvent<PersonalId> {
     protected DatosPersonales datosPersonales;
     protected PersonalId personalId;
 
-    public Personal(PersonalId personalId, DatosPersonales datosPersonales) {
+    public Personal(DatosPersonales datosPersonales, PersonalId personalId) {
         super(personalId);
-        appendChange(new PersonalCreado(personalId, datosPersonales)).apply();
-        appendChange(new PersonalEditado(personalId, datosPersonales)).apply();
+        appendChange(new PersonalCreado(datosPersonales, personalId )).apply();
+        appendChange(new PersonalEditado(datosPersonales, personalId )).apply();
     }
 
 
@@ -42,14 +42,14 @@ public class Personal extends AggregateEvent<PersonalId> {
     }
 
     //Comportamientos
-    public void agregarPersonal(PersonalId personalId, DatosPersonales datosPersonales) {
+    public void agregarPersonal(DatosPersonales datosPersonales, PersonalId personalId) {
         Objects.requireNonNull(personalId);
         Objects.requireNonNull(datosPersonales);
-        appendChange(new PersonalCreado(personalId, datosPersonales)).apply();
+        appendChange(new PersonalCreado(datosPersonales, personalId)).apply();
     }
 
-    public void editarPersonal(PersonalId personalId, DatosPersonales datosPersonales) {
-        appendChange(new PersonalEditado(personalId, datosPersonales)).apply();
+    public void editarPersonal(DatosPersonales datosPersonales, PersonalId personalId) {
+        appendChange(new PersonalEditado(datosPersonales, personalId)).apply();
     }
     public void eliminarPersonal(PersonalId personalId) {
         appendChange(new PersonalEliminado(personalId)).apply();

@@ -17,11 +17,11 @@ public class DatosPersonales implements ValueObject<String> {
         this.apellido = apellido;
         this.correo = correo;
 
-        if (this.nombre.length() <= 4) {
-            throw new IllegalArgumentException("El nombre debe tener más de 4 caracteres");
+        if (this.nombre.length() <= 2) {
+            throw new IllegalArgumentException("El nombre debe tener más de 2 caracteres");
         }
-        if (this.apellido.length() <= 4) {
-            throw new IllegalArgumentException("El apellido debe tener más de 4 caracteres");
+        if (this.apellido.length() <= 2) {
+            throw new IllegalArgumentException("El apellido debe tener más de 2 caracteres");
         }
         if (this.apellido.isBlank()) {
             throw new IllegalArgumentException("El nombre no puede ser vacío");

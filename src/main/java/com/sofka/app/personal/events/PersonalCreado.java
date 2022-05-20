@@ -6,20 +6,19 @@ import com.sofka.app.personal.values.PersonalId;
 
 
 public class PersonalCreado extends DomainEvent {
-    private PersonalId personalId;
     private DatosPersonales datosPersonales;
+    private PersonalId personalId;
 
 
-    public PersonalCreado(PersonalId personalId, DatosPersonales datosPersonales) {
+
+    public PersonalCreado(DatosPersonales datosPersonales, PersonalId personalId) {
         super("com.sofka.app.personalCreado");
     }
-
-    public PersonalId getPersonalId() {
-        return personalId;
-    }
-
     public DatosPersonales getDatosPersonales() {
         return datosPersonales;
+    }
+    public PersonalId getPersonalId() {
+        return personalId;
     }
 
 

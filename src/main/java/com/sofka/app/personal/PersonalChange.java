@@ -16,7 +16,7 @@ public class PersonalChange extends EventChange {
             personal.auxiliarBodega = null;
         });
         apply((PersonalEditado event) -> {
-            personal.editarPersonal(event.getPersonalId(), event.getDatosPersonales());
+            personal.editarPersonal( event.getDatosPersonales(), event.getPersonalId());
         });
         apply((PersonalEliminado event)->{
            personal.eliminarPersonal.removeIf((Predicate<? super Object>) event.getPersonalId());

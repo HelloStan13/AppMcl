@@ -12,7 +12,7 @@ public class EditarPersonalUseCase extends UseCase<RequestCommand<EditarPersonal
     @Override
     public void executeUseCase(RequestCommand<EditarPersonal> personalEditadoRequestCommand) {
         var command = personalEditadoRequestCommand.getCommand();
-        var personal = new Personal(command.getPersonalId(), command.getDatosPersonales());
+        var personal = new Personal(command.getDatosPersonales(), command.getPersonalId());
         emit().onResponse(new ResponseEvents(personal.getUncommittedChanges()));
     }
 }
