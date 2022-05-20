@@ -58,8 +58,8 @@ public class Personal extends AggregateEvent<PersonalId> {
         appendChange(new PersonalAsignado(personalId)).apply();
     }
 
-
     public void eliminarPersonal(PersonalId personalId) {
+        Objects.requireNonNull(personalId);
         appendChange(new PersonalEliminado(personalId)).apply();
     }
 

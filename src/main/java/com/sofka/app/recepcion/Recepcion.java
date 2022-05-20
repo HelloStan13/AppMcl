@@ -57,7 +57,7 @@ public class Recepcion extends AggregateEvent<RecepcionId> {
         Objects.requireNonNull(almacenamientoId);
         appendChange(new PedidoAlmacenado(almacenamientoId, recepcionId, pedidoId,estado)).apply();
     }
-    public void finalizarPedidoo(Pedido pedido){
+    public void finalizarPedido(Pedido pedido){
         appendChange(new PedidoFinalizado(pedido, estado)).apply();
     }
 

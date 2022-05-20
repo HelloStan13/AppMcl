@@ -10,7 +10,7 @@ public class AlmacenadoPormarca extends co.com.sofka.domain.generic.DomainEvent 
     private Estante estante;
 
     public AlmacenadoPormarca(AlmacenamientoId almacenamientoId, DatosDemarca datosDemarca, Estante estante) {
-        super("com.sofka.app.almacenadoPormarca");
+        super("com.sofka.app.almacenadopormarca");
         this.almacenamientoId = almacenamientoId;
         this.datosDemarca = datosDemarca;
         this.estante = estante;

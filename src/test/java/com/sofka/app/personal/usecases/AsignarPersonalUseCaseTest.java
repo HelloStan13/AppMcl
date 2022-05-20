@@ -23,7 +23,7 @@ class AsignarPersonalUseCaseTest {
                 .getDomainEvents();
 
         //assert
-        var event =(PersonalAsignado)events.get(1);
+        var event =(PersonalAsignado)events.get(0);
         Assertions.assertEquals("com.sofka.app.personalAsignado", event.type);
         Assertions.assertEquals(personalId.value(), event.aggregateRootId());
     }
